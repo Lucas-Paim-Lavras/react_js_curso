@@ -1,4 +1,5 @@
 import "./App.css";
+import HelloWorld from "./components/HelloWorld";
 //usaremos essa área para importar coisas
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <p>Olá, {novoNome}</p>
       <p>Soma: {soma(1, 2)}</p>
       <img src={url} alt="Minha imagem" />
+      < HelloWorld/>
     </div>
   );
 }
