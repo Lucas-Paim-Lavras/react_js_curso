@@ -2,7 +2,7 @@ import Item from './Item'
 
 function List(){
     return(
-        // Por meio do Fragment, não preciso escrever a div parseInt, isto é, nomeá-la para os "filhos"
+        // Por meio do Fragment, não preciso escrever a div pai, isto é, nomeá-la para os "filhos"
         <>   
             <h1>Minha lista</h1>
             <ul>
