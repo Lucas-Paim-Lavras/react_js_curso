@@ -8,7 +8,7 @@ function App() {
   return (
     //Aqui, precisa usar className, sempre!
     <div className="App">
-      <h1>Testando o eventos</h1>
+      <h1>Testando o evento</h1>
       <Evento numero="1"/>
       <Evento numero="2"/>
       <Form />
