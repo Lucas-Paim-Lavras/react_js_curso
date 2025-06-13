@@ -6,8 +6,12 @@ function List(){
         <>   
             <h1>Minha lista</h1>
             <ul>
-                <Item marca="Ferrari"/>
-                <Item marca="Fiat"/>
+                <Item marca="Ferrari" ano_lancamento={1985}/>
+                <Item marca="Fiat" ano_lancamento={1964}/>
+                <Item marca="Renault"/>
+                <Item marca="Chevrolet" ano_lancamento={1999}/>
+                <Item />
+                {/* Com a defaultProps, se eu não passar marca e ano_lancamento o defaultProps escreve aquiloq que eu passei pra ele */}
             </ul>
         </>
 
