@@ -15,7 +15,6 @@ function Evento (){
             <Button event={meuEvento} text="Primeiro evento"/>
             <Button event={segundoEvento} text="Segundo evento"/>
         </div>
-
     )
 }
 
