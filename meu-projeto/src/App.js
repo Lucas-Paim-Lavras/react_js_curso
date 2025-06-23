@@ -1,13 +1,14 @@
 import "./App.css";
 import Condicional from "./components/Condicional";
+
+
 //usaremos essa área para importar coisas
 
 function App() {
-
   return (
     //Aqui, precisa usar className, sempre!
     <div className="App">
-      <h1>Renderização condicional</h1>
+      <h1>Renderização Condicional</h1>
       <Condicional/>
     </div>
   );

@@ -40,7 +40,7 @@ function Condicional() {
           Enviar e-mail
         </button>
 
-        {/* Renderiza o bloco abaixo apenas se userEmail tiver um valor (condicional) */}
+        {/* Renderiza o bloco abaixo apenas se userEmail tiver um valor (condicional), por isso, ao clicar no botão limpar email, vai deixar de exibir */}
         {userEmail && (
           <div>
             <p>O e-mail do usuário é: {userEmail}</p>
