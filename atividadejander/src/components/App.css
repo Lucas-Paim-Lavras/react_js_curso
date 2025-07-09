@@ -1,0 +1,106 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #2f4f4f, #7f8c8d);
+  margin: 0;
+  padding: 2em;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.divForm, .divTabela {
+  width: 50%;
+  padding: 20px;
+}
+.divisor {
+  width: 1px;
+  background-color: #ccc;
+  margin: 0 10px;
+  height: 100px;
+}
+
+/* Formulário */
+form {
+  background-color: #ffffff22;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+form h2 {
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+form input {
+  width: 75%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #ccc;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.2s;
+}
+
+form button:hover {
+  background-color: #aaa;
+  transform: scale(1.1);
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff22;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  color: #fff;
+  text-align: center;
+}
+
+table th {
+  background-color: #2f4f4f;
+}
+
+table button {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+table button:hover {
+  background-color: #555;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .divisor {
+    display: none;
+  }
+
+  .divForm, .divTabela {
+    width: 100%;
+  }
+}

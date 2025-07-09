@@ -1,70 +1,67 @@
-import { useEffect, useState } from "react";
-import styles from "./Formulario.module.css";
+import { useState, useEffect } from "react";
 
-function Formulario() {
-  const [name, setName] = useState("");
+function Formulario({ onSalvar, dadoEditar }) {
+  const [nome, setNome] = useState("");
   const [idade, setIdade] = useState("");
-  const [civil, setCivil] = useState("");
+  const [estadoCivil, setEstadoCivil] = useState("");
   const [cpf, setCpf] = useState("");
-  const lista = [];
 
-  function cadastrarUsuario(e) {
+  useEffect(() => {
+    if (dadoEditar) {
+      setNome(dadoEditar.nome);
+      setIdade(dadoEditar.idade);
+      setEstadoCivil(dadoEditar.estadoCivil);
+      setCpf(dadoEditar.cpf);
+    }
+  }, [dadoEditar]);
+
+  function submit(e) {
     e.preventDefault();
-    const dados = {
-      name: name,
-      idade: idade,
-      civil: civil,
-      cpf: cpf,
-    };
-    lista.push(dados)
+    onSalvar({ nome, idade, estadoCivil, cpf });
+    setNome("");
+    setIdade("");
+    setEstadoCivil("");
+    setCpf("");
   }
 
   return (
-    <div>
-      <h1>Novo cadastro</h1>
-      <form onSubmit={(e) => cadastrarUsuario(e)}>
-        <div>
-          <label>Nome</label>
-          <input
-            type="text"
-            id="name"
-            placeholder="Digite o nome do usuário"
-            onChange={(e) => setName(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <label>Idade</label>
-          <input
-            type="Number"
-            id="idade"
-            placeholder="Digite a idade do usuário"
-            onChange={(e) => setIdade(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <label>Estado Civil</label>
-          <input
-            type="text"
-            id="civil"
-            placeholder="Digite o estado civil do usuário"
-            onChange={(e) => setCivil(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <label>CPF</label>
-          <input
-            type="text"
-            id="cpf"
-            placeholder="Digite o CPF do usuário"
-            maxLength={11}
-            onChange={(e) => setCpf(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <input type="submit" value="Salvar"></input>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={submit} class='divForm'>
+      <h2>Novo Cadastro</h2>
+      <label>Nome</label><br/><br/>
+      <input
+        value={nome}
+        onChange={(e) => setNome(e.target.value)}
+        placeholder="Nome"
+      />
+      <br />
+      <label>Idade</label><br/><br/>
+      <input
+        value={idade}
+        type="number"
+        maxLength={3}
+        onChange={(e) => setIdade(e.target.value)}
+        placeholder="Idade"
+      />
+      <br />
+      <label>Estado Civil</label><br/><br/>
+      <input
+        value={estadoCivil}
+        onChange={(e) => setEstadoCivil(e.target.value)}
+        placeholder="Estado Civil"
+      />
+      <br />
+      <label>CPF</label><br/><br/>
+      <input
+        value={cpf}
+        type="number"
+        maxLength={11}
+        onChange={(e) => setCpf(e.target.value)}
+        placeholder="CPF"
+      />
+      <br />
+      <br />
+      <button type="submit">Salvar</button>
+    </form>
   );
 }
 

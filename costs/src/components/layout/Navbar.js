@@ -11,16 +11,16 @@ function Navbar() {
           <img src={logo} alt="Costs"></img>
         </Link>
         <ul class={styles.list}>
-            <li class={styles.item}>
+            <li className={styles.item}>
                 <Link to="./">Home</Link>
             </li>
-            <li class={styles.item}>
+            <li className={styles.item}>
                 <Link to="./projects">Projetos</Link>
             </li>
-            <li class={styles.item}>
+            <li className={styles.item}>
                 <Link to="./company">Empresa</Link>
             </li>
-            <li class={styles.item}>
+            <li className={styles.item}>
                 <Link to="./contact">Contato</Link>
             </li>
         </ul>
