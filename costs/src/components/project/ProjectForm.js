@@ -6,8 +6,9 @@ import Input from "../form/Input";
 import Select from "../form/Select";
 import SubmitButton from "../form/SubmitButton";
 
-function ProjectForm({ btnText }) {
+function ProjectForm({ handleSubmit, btnText, projectData}) {
   const [categories, setCategories] = useState([]);
+  const [project, setProject] =useState(projectData || {})
   useEffect(() => {
     fetch("http://localhost:5000/categories", {
       method: "GET",
@@ -22,8 +23,13 @@ function ProjectForm({ btnText }) {
       .catch((err) => console.log(err));
   }, []);
 
+  const submit = (e) => {
+    e.preventDefault()
+    handleSubmit(project)
+  }
+
   return (
-    <form className={styles.form}>
+    <form onSubmit={submit} className={styles.form}>
       <Input
         type="text"
         text="Nome do projeto"
