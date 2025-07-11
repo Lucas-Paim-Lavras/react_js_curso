@@ -1,0 +1,21 @@
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  background-color: #ececec;
+  border: 2px solid #333;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.game {
+  font-family: sans-serif;
+  padding: 20px;
+}
