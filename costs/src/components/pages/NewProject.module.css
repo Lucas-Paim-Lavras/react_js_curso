@@ -11,3 +11,8 @@
 .newproject_container p{
     color: #7b7b7b;
 }
+
+.newproject_container select{
+    background-color: #fff;
+    color: #7b7b7b;
+}
